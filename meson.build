@@ -19,20 +19,6 @@ src = ['src/blocks.c',
 
 include_dirs = include_directories('src/')
 
-install_headers(['src/cmark.h',
-  'src/config.h',
-  'src/buffer.h',
-  'src/chunk.h',
-  'src/references.h',
-  'src/debug.h',
-  'src/utf8.h',
-  'src/node.h',
-  'src/buffer.h',
-  'src/scanners.h',
-  'src/inlines.h',
-  'src/html/html_unescape.h',
-  'src/html/houdini.h'], subdir: 'cmark')
-
 re2c = run_command('re2c', '--case-insensitive', '-b', '-i', '-o', 'src/scanners.c', 'src/scanners.re')
 if re2c.returncode() != 0
     errortxt = re2c.stderr().strip()
