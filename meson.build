@@ -35,9 +35,9 @@ install_headers(['src/cmark.h',
 
 re2c = run_command('re2c', '--case-insensitive', '-b', '-i', 'src/scanners.re','-o', 'src/scanners.c')
 if re2c.returncode() != 0
-    error('Re2c failed!')
+    errortxt = re2c.stderr().strip()
+    error('Re2c failed: ' + errortxt)
 endif
-
 # We only support static build, because of
 # reliance on u3 memory allocators.
 
