@@ -31,3 +31,5 @@ bstrlib.txt
 build
 cmark.dSYM/*
 cmark
+build/
+src/scanners.c
