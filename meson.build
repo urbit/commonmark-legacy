@@ -31,7 +31,7 @@ install_headers(['src/cmark.h',
   'src/scanners.h',
   'src/inlines.h',
   'src/html/html_unescape.h',
-  'src/html/houdini.h'])
+  'src/html/houdini.h'], subdir: 'cmark')
 
 re2c = run_command('re2c', '--case-insensitive', '-b', '-i', '-o', 'src/scanners.c', 'src/scanners.re')
 if re2c.returncode() != 0
