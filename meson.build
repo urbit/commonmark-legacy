@@ -33,7 +33,7 @@ install_headers(['src/cmark.h',
   'src/html/html_unescape.h',
   'src/html/houdini.h'])
 
-re2c = run_command('re2c', '--case-insensitive', '-b', '-i', 'src/scanners.re','-o', 'src/scanners.c')
+re2c = run_command('re2c', '--case-insensitive', '-b', '-i', '-o', 'src/scanners.c', 'src/scanners.re')
 if re2c.returncode() != 0
     errortxt = re2c.stderr().strip()
     error('Re2c failed: ' + errortxt)
