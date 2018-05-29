@@ -31,7 +31,7 @@ lib = static_library('cmark',
 sources: src,
 include_directories : include_dirs,
 version: version,
-c_args : ['-O2', '-Wall', '-std=c99'])
+c_args : ['-Wall', '-std=c99'])
 
 cmark_dep = declare_dependency(include_directories : include_dirs,
   link_with : lib)
